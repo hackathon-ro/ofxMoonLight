@@ -1,8 +1,4 @@
 app = ofLuaApp()
-
-ofLogo = ofImage(); 
-light = ofLight();
-cam = ofEasyCam(); 
         
 function app:setup()
     
@@ -94,54 +90,9 @@ end
 
 
 function app:keyPressed(key)
-    
-    print "pressed s"
 
 	if key == string.byte('s') then
-        
 		bSmooth = not bSmooth
-
     end
 	
 end
-
---[[
-//--------------------------------------------------------------
-void testApp::keyReleased  (int key){
-
-}
-
-//--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ){
-
-}
-
-//--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button){
-}
-
-//--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void testApp::windowResized(int w, int h){
-
-}
-
-//--------------------------------------------------------------
-void testApp::gotMessage(ofMessage msg){
-
-}
-
-//--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
-
-}
-]]--
