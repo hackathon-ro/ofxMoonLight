@@ -1,3 +1,4 @@
 *.app
 liblua.a
 Breakpoints*
+launcher
