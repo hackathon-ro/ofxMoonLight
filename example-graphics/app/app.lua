@@ -64,7 +64,7 @@ function app:draw()
 	ofDrawBitmapString("transparency", 410,500);
 
 
-	if bSmooth ~= nil then
+	if bSmooth then
 		ofEnableSmoothing();
 	end
 
@@ -73,7 +73,7 @@ function app:draw()
 		ofLine(600,300 + (i*5),800, 250 + (i*10));
 	end
 
-	if bSmooth ~= nil then
+	if bSmooth then
 		ofDisableSmoothing();
 	end
 
@@ -92,13 +92,20 @@ function app:mousePressed(x, y, button)
 end
 
 
---[[
-void testApp::keyPressed  (int key){
-	if (key == 's'){
-		bSmooth = !bSmooth;
-	}
-}
 
+function app:keyPressed(key)
+    
+    print "pressed s"
+
+	if key == string.byte('s') then
+        
+		bSmooth = not bSmooth
+
+    end
+	
+end
+
+--[[
 //--------------------------------------------------------------
 void testApp::keyReleased  (int key){
 
