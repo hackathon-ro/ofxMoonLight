@@ -60,10 +60,14 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "new"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "~/new_ml_app"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/Volumes/raspberrypidev/openFrameworks/addons/ofxMoonLight/example-app"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
