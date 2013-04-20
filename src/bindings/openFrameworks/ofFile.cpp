@@ -609,7 +609,7 @@ static int ofFile_remove(lua_State *L) {
 static int ofFile_getSize(lua_State *L) {
   try {
     ofFile *self = *((ofFile **)dub_checksdata(L, 1, "ofFile"));
-    dub_pushudata(L, new uint64_t(self->getSize()), "uint64_t", true);
+    dub_pushudata(L, new uint64_t(self->getSize()), "uint64", true);
     return 1;
   } catch (std::exception &e) {
     lua_pushfstring(L, "getSize: %s", e.what());

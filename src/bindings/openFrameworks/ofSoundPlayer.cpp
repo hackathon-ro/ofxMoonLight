@@ -69,7 +69,7 @@ static int ofSoundPlayer_setPlayer(lua_State *L) {
 static int ofSoundPlayer_getPlayer(lua_State *L) {
   try {
     ofSoundPlayer *self = *((ofSoundPlayer **)dub_checksdata(L, 1, "ofSoundPlayer"));
-    dub_pushudata(L, new ofPtr < ofBaseSoundPlayer >(self->getPlayer()), "ofPtr < ofBaseSoundPlayer >", true);
+    dub_pushudata(L, new ofPtr < ofBaseSoundPlayer >(self->getPlayer()), "ofSoundPlayer", true);
     return 1;
   } catch (std::exception &e) {
     lua_pushfstring(L, "getPlayer: %s", e.what());

@@ -701,6 +701,8 @@ static int ofShader_getAttributeLocation(lua_State *L) {
   return dub_error(L);
 }
 
+#ifndef TARGET_OPENGLES
+
 /** void ofShader::setAttribute1s(GLint location, short v1)
  * api/openFrameworks/gl/ofShader.h:77
  */
@@ -778,6 +780,8 @@ static int ofShader_setAttribute4s(lua_State *L) {
   }
   return dub_error(L);
 }
+
+#endif
 
 /** void ofShader::setAttribute1f(GLint location, float v1)
  * api/openFrameworks/gl/ofShader.h:83
@@ -857,6 +861,8 @@ static int ofShader_setAttribute4f(lua_State *L) {
   return dub_error(L);
 }
 
+#ifndef TARGET_OPENGLES
+
 /** void ofShader::setAttribute1d(GLint location, double v1)
  * api/openFrameworks/gl/ofShader.h:89
  */
@@ -934,6 +940,8 @@ static int ofShader_setAttribute4d(lua_State *L) {
   }
   return dub_error(L);
 }
+
+#endif
 
 /** void ofShader::setAttribute1fv(const char *name, float *v, GLsizei stride=sizeof(float))
  * api/openFrameworks/gl/ofShader.h:95
@@ -1214,18 +1222,22 @@ static const struct luaL_Reg ofShader_member_methods[] = {
   { "setUniform4fv", ofShader_setUniform4fv },
   { "setUniformMatrix4f", ofShader_setUniformMatrix4f },
   { "getAttributeLocation", ofShader_getAttributeLocation },
+#ifndef TARGET_OPENGLES
   { "setAttribute1s", ofShader_setAttribute1s },
   { "setAttribute2s", ofShader_setAttribute2s },
   { "setAttribute3s", ofShader_setAttribute3s },
   { "setAttribute4s", ofShader_setAttribute4s },
+#endif
   { "setAttribute1f", ofShader_setAttribute1f },
   { "setAttribute2f", ofShader_setAttribute2f },
   { "setAttribute3f", ofShader_setAttribute3f },
   { "setAttribute4f", ofShader_setAttribute4f },
+#ifndef TARGET_OPENGLES
   { "setAttribute1d", ofShader_setAttribute1d },
   { "setAttribute2d", ofShader_setAttribute2d },
   { "setAttribute3d", ofShader_setAttribute3d },
   { "setAttribute4d", ofShader_setAttribute4d },
+#endif
   { "setAttribute1fv", ofShader_setAttribute1fv },
   { "setAttribute2fv", ofShader_setAttribute2fv },
   { "setAttribute3fv", ofShader_setAttribute3fv },

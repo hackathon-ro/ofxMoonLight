@@ -528,22 +528,6 @@ static int ofVideoGrabber_isInitialized(lua_State *L) {
   return dub_error(L);
 }
 
-/** virtual unsigned char* ofBaseVideoGrabber::getPixels()=0
- * api/openFrameworks/types/ofBaseTypes.h:201
- */
-static int ofVideoGrabber_getPixels(lua_State *L) {
-  try {
-    ofVideoGrabber *self = *((ofVideoGrabber **)dub_checksdata(L, 1, "ofVideoGrabber"));
-    lua_pushstring(L, self->getPixels());
-    return 1;
-  } catch (std::exception &e) {
-    lua_pushfstring(L, "getPixels: %s", e.what());
-  } catch (...) {
-    lua_pushfstring(L, "getPixels: Unknown exception");
-  }
-  return dub_error(L);
-}
-
 
 
 // --=============================================== __tostring
@@ -584,7 +568,6 @@ static const struct luaL_Reg ofVideoGrabber_member_methods[] = {
   { "getHeight"    , ofVideoGrabber_getHeight },
   { "getWidth"     , ofVideoGrabber_getWidth },
   { "isInitialized", ofVideoGrabber_isInitialized },
-  { "getPixels"    , ofVideoGrabber_getPixels },
   { "__tostring"   , ofVideoGrabber___tostring },
   { "deleted"      , dub_isDeleted        },
   { NULL, NULL},

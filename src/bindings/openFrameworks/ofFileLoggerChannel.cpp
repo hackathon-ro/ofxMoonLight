@@ -114,7 +114,7 @@ static int ofFileLoggerChannel_log(lua_State *L) {
       size_t module_sz_;
       const char *module = dub_checklstring(L, 3, &module_sz_);
       const char *format = dub_checkstring(L, 4);
-      va_list *args = *((va_list **)dub_checksdata(L, 5, "va_list"));
+      va_list *args = *((va_list **)dub_checksdata(L, 5, "va"));
       self->log(logLevel, std::string(module, module_sz_), format, *args);
       return 0;
     } else {

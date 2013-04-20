@@ -794,22 +794,6 @@ static int ofVideoPlayer_isPlaying(lua_State *L) {
   return dub_error(L);
 }
 
-/** virtual unsigned char* ofBaseVideoPlayer::getPixels()=0
- * api/openFrameworks/types/ofBaseTypes.h:237
- */
-static int ofVideoPlayer_getPixels(lua_State *L) {
-  try {
-    ofVideoPlayer *self = *((ofVideoPlayer **)dub_checksdata(L, 1, "ofVideoPlayer"));
-    lua_pushstring(L, self->getPixels());
-    return 1;
-  } catch (std::exception &e) {
-    lua_pushfstring(L, "getPixels: %s", e.what());
-  } catch (...) {
-    lua_pushfstring(L, "getPixels: Unknown exception");
-  }
-  return dub_error(L);
-}
-
 /** virtual ofTexture* ofBaseVideoPlayer::getTexture()
  * api/openFrameworks/types/ofBaseTypes.h:238
  */
@@ -885,7 +869,6 @@ static const struct luaL_Reg ofVideoPlayer_member_methods[] = {
   { "isPaused"     , ofVideoPlayer_isPaused },
   { "isLoaded"     , ofVideoPlayer_isLoaded },
   { "isPlaying"    , ofVideoPlayer_isPlaying },
-  { "getPixels"    , ofVideoPlayer_getPixels },
   { "getTexture"   , ofVideoPlayer_getTexture },
   { "__tostring"   , ofVideoPlayer___tostring },
   { "deleted"      , dub_isDeleted        },
