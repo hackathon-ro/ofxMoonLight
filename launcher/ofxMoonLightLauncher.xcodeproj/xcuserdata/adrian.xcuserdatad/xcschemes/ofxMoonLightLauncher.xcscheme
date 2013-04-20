@@ -59,7 +59,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Volumes/raspberrypidev/openFrameworks/addons/ofxMoonLight/example-app/"
+            argument = "new"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "~/new_ml_app"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

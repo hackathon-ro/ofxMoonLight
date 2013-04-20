@@ -116,8 +116,15 @@ bool ofxMoonLight::doScript(const string& script) {
 		return false;
 	}
     cout << "Script: " << script << "\n";
-	
-    string fullpath = ofFilePath::getAbsolutePath(script);
+
+    string fullpath;
+    if(ofFilePath::isAbsolute(script) == 1) {
+        fullpath = script;
+    } else {
+        fullpath = ofFilePath::join(ofFilePath::getCurrentWorkingDirectory(), script);
+    }
+
+    cout << "Fullpath: " << fullpath << "\n\n";
 
     string filepath = fullpath.append("/main.lua");
     string file = ofFilePath::getFileName(filepath);
