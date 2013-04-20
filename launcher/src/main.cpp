@@ -1,16 +1,21 @@
-#include "ofMain.h"
-#include "testApp.h"
-#include "ofAppGlutWindow.h"
+#include "ofxMoonLightLogger.h"
+
+ofxMoonLight lua;
+vector<string> scripts;
+int currentScript;
 
 //========================================================================
-int main( ){
-
-    ofAppGlutWindow window;
-	ofSetupOpenGL(&window, 1024,768, OF_WINDOW);			// <-------- setup the GL context
-
-	// this kicks off the running of my app
-	// can be OF_WINDOW or OF_FULLSCREEN
-	// pass in width and height too:
-	ofRunApp( new testApp());
-
+int main(){
+    
+    // scripts to run
+    scripts.push_back("scripts/helloworld.lua");
+	currentScript = 0;
+	
+	// listen to error events
+	lua.addListener(new ofxMoonLightLogger());
+	
+	lua.init();
+	
+	// run a script
+	lua.doScript(scripts[currentScript]);
 }
