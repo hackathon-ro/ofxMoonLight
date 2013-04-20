@@ -1,5 +1,3 @@
-require 'Ball'
-
 local windowWidth
 local windowHeight
 

@@ -9,9 +9,6 @@
  --]]------------------------------------------------------
 require 'lubyk'
 
--- 5 = show all warnings
-dub.warn_level = 4
-
 local base = lk.scriptDir()
 local of_base = lk.scriptDir() .. '/api/openFrameworks'
 
@@ -157,7 +154,7 @@ local ins = dub.Inspector {
         of_base .. '/video/ofVideoGrabber.h',
         of_base .. '/video/ofVideoPlayer.h',
         
-        base..'/../../src/app/',
+        base..'/../../src/',
     },
     
     html = false,

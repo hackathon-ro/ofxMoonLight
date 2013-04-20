@@ -1,16 +1,7 @@
 app = ofLuaApp()
 
-ofLogo = ofImage(); 
-light = ofLight();
-cam = ofEasyCam(); 
-        
 function app:setup()
    ofSetVerticalSync(true);
-
-    glEnable(GL_DEPTH_TEST);
-	ofEnableNormalizedTexCoords();
-	ofLogo:loadImage("of.png");
-	ofSetLineWidth(10);
 end
 
 function app:update()
@@ -26,9 +17,7 @@ function app:draw()
 	maxBoxSize = 100;
 	spacing = 1;
 	boxCount = 100;
-	
-	cam:begin()
-	
+
 	for i = 1,boxCount do
 
 		ofPushMatrix();
@@ -48,11 +37,9 @@ function app:draw()
 		ofRotateY(pos.y);
 		ofRotateZ(pos.z);
 		
-		ofLogo:bind();
 		ofFill();
-		ofSetColor(255);
+		ofSetColor(ofColor(math.random(0, 255), math.random(0, 255), math.random(0, 255)));
 		ofBox(boxSize);
-		ofLogo:unbind();
 		
 		ofNoFill();
 		ofSetColor(ofColor().fromHsb(math.sin(t) * 128 + 128, 255, 255));
@@ -60,15 +47,5 @@ function app:draw()
 		
 		ofPopMatrix()
 	end
-	
-	cam:camEnd()
-
-end
-
-function app:mouseDragged(x, y, button)
-
-end
-
-function app:mousePressed(x, y, button)
 
 end

@@ -1774,7 +1774,7 @@ static const struct luaL_Reg ofEasyCam_member_methods[] = {
   { "disableOrtho" , ofEasyCam_disableOrtho },
   { "getOrtho"     , ofEasyCam_getOrtho   },
   { "getImagePlaneDistance", ofEasyCam_getImagePlaneDistance },
-  { "end"          , ofEasyCam_end        },
+  { "camEnd"          , ofEasyCam_end        },
   { "getProjectionMatrix", ofEasyCam_getProjectionMatrix },
   { "getModelViewMatrix", ofEasyCam_getModelViewMatrix },
   { "getModelViewProjectionMatrix", ofEasyCam_getModelViewProjectionMatrix },

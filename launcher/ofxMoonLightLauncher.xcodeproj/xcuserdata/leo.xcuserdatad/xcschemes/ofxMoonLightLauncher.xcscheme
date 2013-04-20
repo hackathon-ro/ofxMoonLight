@@ -57,6 +57,12 @@
             ReferencedContainer = "container:ofxMoonLightLauncher.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "/Volumes/raspberrypidev/openFrameworks/addons/ofxMoonLight/example-cubes"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

@@ -18,6 +18,15 @@ int setLuaPath( lua_State* L, const char* path )
     lua_pushstring( L, cur_path.c_str() ); 
     lua_setfield( L, -2, "path" ); 
     lua_pop( L, 1 );
+
+
+    lua_getglobal( L, "_G" );
+    lua_getfield( L, -1, "current_dir" ); 
+    std::string app_path = path;
+    lua_pop(L, 1);
+    lua_pushstring(L, app_path.c_str() ); 
+    lua_setfield( L, -2, "current_dir" ); 
+    lua_pop( L, 1 );
     return 0;
 }
 
@@ -115,9 +124,14 @@ bool ofxMoonLight::doScript(const string& script) {
 		ofLogError("ofxMoonLight") << "Cannot do script, lua state not inited!";
 		return false;
 	}
-    cout << "Script: " << script << "\n";
-	
-    string fullpath = ofFilePath::getAbsolutePath(script);
+
+    string fullpath;
+    if(ofFilePath::isAbsolute(script) == 1) {
+        fullpath = script;
+    } else {
+        fullpath = ofFilePath::join(ofFilePath::getCurrentWorkingDirectory(), script);
+    }
+
 
     string filepath = fullpath.append("/main.lua");
     string file = ofFilePath::getFileName(filepath);
