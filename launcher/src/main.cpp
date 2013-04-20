@@ -25,7 +25,7 @@ int createNewApp(string path) {
     dataDir.create();
 
     //add application files
-    string baseFilePath = ofFilePath::join(ofFilePath::getCurrentExePath(), "support");
+    string baseFilePath = ofFilePath::join(ofFilePath::getCurrentExeDir(), "appfiles");
     ofFile mainFile = ofFile(ofFilePath::join(baseFilePath, "main.lua"));
     ofFile appFile = ofFile(ofFilePath::join(baseFilePath, "app.lua"));
     ofFile classFile = ofFile(ofFilePath::join(baseFilePath, "class.lua"));
