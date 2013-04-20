@@ -75,6 +75,7 @@ int luaopen_ofAudioEventArgs(lua_State *L);
 int luaopen_ofResizeEventArgs(lua_State *L);
 int luaopen_ofMessage(lua_State *L);
 int luaopen_ofCoreEvents(lua_State *L);
+int luaopen_ofGLES2Renderer(lua_State *L);
 int luaopen_ofFbo(lua_State *L);
 int luaopen_ofBuffer(lua_State *L);
 int luaopen_ofFilePath(lua_State *L);
@@ -299,6 +300,9 @@ static int ofSetupOpenGL(lua_State *L) {
       int w = dub_checkint(L, 1);
       int h = dub_checkint(L, 2);
       int screenMode = dub_checkint(L, 3);
+#ifdef TARGET_OPENGLES
+        ofSetCurrentRenderer(ofPtr<ofBaseRenderer>(new ofGLES2Renderer()));
+#endif
       ofSetupOpenGL(w, h, screenMode);
       return 0;
     }
@@ -7021,6 +7025,7 @@ extern "C" int luaopen_of(lua_State *L) {
   luaopen_ofResizeEventArgs(L);
   luaopen_ofMessage(L);
   luaopen_ofCoreEvents(L);
+  luaopen_ofGLES2Renderer(L);
   luaopen_ofFbo(L);
   luaopen_ofBuffer(L);
   luaopen_ofFilePath(L);
