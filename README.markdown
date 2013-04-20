@@ -1,6 +1,6 @@
-1. Nume proiect: ofxMoonLight 
+Nume proiect: ofxMoonLight 
 
-2. Descriere
+Descriere
 
 ofxMoonLight este un mediu de programare in Lua (orientat catre Creative Coding) pentru Raspeberry Pi. 
 Este util ca instrument de invatare a programarii (ofera feedback vizual rapid), dar si programatorilor din comunitatea OpenFrameworks care deja cunosc particularitatile
@@ -22,12 +22,11 @@ Avantajele solutiei:
 - Lua are o complexitate redusa de invatare, comparativ cu C++ sau Java;
 - ofxMoonLight are avantajele unui limbaj interpretat (usurinta de invatare), eliminand in mare masura dezavantajul principal (viteza redusa de rulare comparativ cu un limbaj compilat);
 
+Categoria proiectului: Software 
 
-3. Categoria proiectului: Software 
-
-4. Echipa MoonPi: 
+Echipa MoonPi: 
 - Chioveanu Leonard
 - Florescu Bogdan
 - Vasile Adrian 
 
-5. Link GitHub: https://github.com/hackathon-ro/ofxMoonLight
+Link GitHub: https://github.com/hackathon-ro/ofxMoonLight
