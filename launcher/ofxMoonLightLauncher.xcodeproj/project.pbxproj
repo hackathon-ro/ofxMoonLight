@@ -140,6 +140,8 @@
 /* Begin PBXFileReference section */
 		30330A8116C9378F005A50EF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		30330A8316C937B3005A50EF /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
+		3AB571F51722D8F90020BA63 /* example-app */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-app"; path = "../example-app"; sourceTree = "<group>"; };
+		3AB571F61722D9A20020BA63 /* tools */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tools; path = ../tools; sourceTree = "<group>"; };
 		B34CF6151719D9AA00017A01 /* of.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = of.cpp; sourceTree = "<group>"; };
 		B34CF6171719D9AA00017A01 /* ofAudioEventArgs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofAudioEventArgs.cpp; sourceTree = "<group>"; };
 		B34CF6181719D9AA00017A01 /* ofBaseGLRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofBaseGLRenderer.cpp; sourceTree = "<group>"; };
@@ -459,6 +461,8 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
 				E4B69B5B0A3A1756003C02F2 /* ofxMoonLightLauncherDebug.app */,
+				3AB571F61722D9A20020BA63 /* tools */,
+				3AB571F51722D8F90020BA63 /* example-app */,
 			);
 			sourceTree = "<group>";
 		};

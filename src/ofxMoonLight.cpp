@@ -1,3 +1,23 @@
+/*
+ * Copyright (c) 2012 Dan Wilcox <danomatika@gmail.com>
+ *
+ * BSD Simplified License.
+ * For information on usage and redistribution, and for a DISCLAIMER OF ALL
+ * WARRANTIES, see the file, "LICENSE.txt," in this distribution.
+ *
+ * See https://github.com/danomatika/ofxMoonLight for documentation
+ *
+ * This project uses the following libraries:
+ *
+ * Lua, Copyright (c) 1994â2011 Lua.org, PUC-Rio using the MIT License.
+ * See the file "COPYRIGHT" in src/lua.
+ * See http://www.lua.org/docs.html for documentation
+ *
+ * Luabind, Copyright (c) 2003 Daniel Wallin and Arvid Norberg using the
+ * MIT License. See the file "LICENSE" in src/luabind.
+ * See http://www.rasterbar.com/products/luabind/docs.html for documentation
+ *
+ */
 #include "ofxMoonLight.h"
 #include "ofUtils.h"
 
@@ -6,9 +26,11 @@ int setLuaPath( lua_State* L, const char* path )
     lua_getglobal( L, "package" );
     lua_getfield( L, -1, "path" ); // get field "path" from table at top of stack (-1)
     std::string cur_path = lua_tostring( L, -1 ); // grab path string from top of stack
+
     cur_path.append( ";" ); // do your path magic here
     cur_path.append( path );
-    cur_path = cur_path.append("/?.lua");
+    cur_path.append("/app/?.lua");
+
     lua_pop( L, 1 ); // get rid of the string on the stack we just pushed on line 5
     lua_pushstring( L, cur_path.c_str() ); // push the new one
     lua_setfield( L, -2, "path" ); // set the field "path" in table at -2 with value at top of stack
@@ -110,10 +132,14 @@ bool ofxMoonLight::doScript(const string& script) {
 		ofLogError("ofxMoonLight") << "Cannot do script, lua state not inited!";
 		return false;
 	}
+    cout << "Script: " << script << "\n";
 	
-	string fullpath = ofFilePath::getAbsolutePath(ofToDataPath(script));
-	string file = ofFilePath::getFileName(fullpath);
-	string folder = ofFilePath::getEnclosingDirectory(fullpath);
+    string fullpath = ofFilePath::getAbsolutePath(script);
+
+    string filepath = fullpath.append("/main.lua");
+    string file = ofFilePath::getFileName(filepath);
+
+    std::string folder = ofFilePath::getEnclosingDirectory(fullpath);
 	
 	// trim the trailing slash Poco::Path always adds ... blarg
 	if(folder.size() > 0 && folder.at(folder.size()-1) == '/') {
@@ -123,6 +149,8 @@ bool ofxMoonLight::doScript(const string& script) {
 	ofLogVerbose("ofxMoonLight") << "Doing script: \"" << file << "\" path: \"" << folder << "\"";
 
     setLuaPath(L, folder.c_str());
+    std::string data_path = folder.append("/data/");
+	ofSetDataPathRoot(data_path);
 	// load the script
 	int ret = luaL_loadfile(L, fullpath.c_str());
 	if(ret != 0) {
