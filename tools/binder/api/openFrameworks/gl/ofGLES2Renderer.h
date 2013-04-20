@@ -105,7 +105,7 @@ public:
 	bool bClearBg();
 	void background(const ofColor & c);
 	void background(float brightness);
-	void background(int hexColor, float _a=255.0f);
+//	void background(int hexColor, float _a=255.0f);
 	void background(int r, int g, int b, int a=255);
     
 	void setBackgroundAuto(bool bManual);		// default is true

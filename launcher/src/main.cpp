@@ -44,19 +44,21 @@ int createNewApp(string path) {
 //========================================================================
 int main(int argc, char* argv[]) {
 
-
-    if(argc < 2) {
-        ofLogError("Must supply a path parameter");
-        return 1;
-    }
-
-
-    if(strcmp(argv[1], "new")==0) {
+    if(argc > 1 && strcmp(argv[1], "new")==0) {
+        cout << "Argv[1]: " << argv[1] << "\n\n";
         return createNewApp(argv[2]);
-        
     } else {
+        std::string script;
+        if(argc == 1) {
+            script = ".";
+        } else {
+            script = argv[1];
+        }
+
+        cout << "Script: " << argc << "\n\n";
+
         // scripts to run
-        scripts.push_back(argv[1]);
+        scripts.push_back(script);
         currentScript = 0;
         
         // listen to error events
