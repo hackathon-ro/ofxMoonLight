@@ -68,6 +68,14 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "/Volumes/raspberrypidev/openFrameworks/addons/ofxMoonLight/example-app"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/Volumes/raspberrypidev/openFrameworks/addons/ofxMoonLight/example-cubes"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/Volumes/raspberrypidev/openFrameworks/addons/ofxMoonLight/example-graphics"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
