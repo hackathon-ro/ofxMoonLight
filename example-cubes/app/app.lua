@@ -1,19 +1,14 @@
 app = ofLuaApp()
-
-ofLogo = ofImage(); 
+ 
 light = ofLight();
 cam = ofEasyCam(); 
         
 function app:setup()
    ofSetVerticalSync(true);
 
-    glEnable(GL_DEPTH_TEST);
-
 	ofEnableNormalizedTexCoords();
 	
-	ofLogo:loadImage("of.png");
-	
-	ofSetLineWidth(10);
+	ofSetLineWidth(1);
 end
 
 function app:update()
@@ -51,11 +46,9 @@ function app:draw()
 		ofRotateY(pos.y);
 		ofRotateZ(pos.z);
 		
-		ofLogo:bind();
 		ofFill();
 		ofSetColor(255);
 		ofBox(boxSize);
-		ofLogo:unbind();
 		
 		ofNoFill();
 		ofSetColor(ofColor().fromHsb(math.sin(t) * 128 + 128, 255, 255));
