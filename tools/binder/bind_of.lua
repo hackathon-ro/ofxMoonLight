@@ -9,6 +9,9 @@
  --]]------------------------------------------------------
 require 'lubyk'
 
+-- 5 = show all warnings
+dub.warn_level = 4
+
 local base = lk.scriptDir()
 local of_base = lk.scriptDir() .. '/api/openFrameworks'
 
@@ -21,7 +24,74 @@ local gen_dir = base ..'/bindings/openFrameworks'
 
 local format = string.format
 
+-- binding for any pointer type
+local handlePointer = function(pointer_type)
+return {
+    type   = pointer_type,
+    -- Get value from Lua.
+    pull   = function(name, position, prefix)
+    return format('%s %s = (%s) lua_touserdata (L, %i);\n',
+                  pointer_type, name, pointer_type, position)
+    end,
+    -- Push value in Lua
+    push   = function(name)
+    return format('lua_pushlightuserdata(L, (void *)%s);', name)
+    end,
+    cast   = function(name)
+    return format('(%s) %s', pointer_type, name)
+    end,
+}
+end
+
+local custom_types =
+{
+    ['BOOL'] = 'boolean',
+    ['long'] = 'int',
+    ['unsigned long'] = 'int',
+    ['unsigned long long'] = 'int',
+    ['long unsigned long'] = 'int',
+    ['float const const'] = 'number',
+    
+    ['int *'] = handlePointer('int *'),
+    ['unsigned int *'] = handlePointer('unsigned int *'),
+    ['unsigned short *'] = handlePointer('unsigned short *'),
+    ['float *'] = handlePointer('float *'),
+    ['unsigned charconst *'] = 'string',
+    ['char* *'] = handlePointer('char* *'),
+    
+    ['string'] = {
+        type   = 'string',
+        -- Get value from Lua.
+        pull   = function(name, position, prefix)
+        return format('size_t %s_sz_;\nconst char *%s = %schecklstring(L, %i, &%s_sz_);',
+                      name, name, prefix, position, name)
+        end,
+        -- Push value in Lua
+        push   = function(name)
+        return format('lua_pushlstring(L, %s.data(), %s.length());', name, name)
+        end,
+        -- Cast value
+        cast   = function(name)
+        return format('std::string(%s, %s_sz_)', name, name)
+        end,
+    },
+    
+    ['GLenum'] = 'int',
+    ['GLint'] = 'int',
+    ['GLuint'] = 'int',
+    ['GLfloat'] = 'number',
+    
+    ['enum ofTouchEventArgs::Type'] = 'int',
+    ['ofIndexType'] = 'int',
+    ['IndexType'] = 'int',    
+}
+
+
+
+
 local binder = dub.LuaBinder()
+
+binder:addCustomTypes(custom_types)
 
 --=============================================== Bind
 
@@ -90,6 +160,62 @@ os.execute('mkdir -p ' .. gen_dir)
 
 binder:bind(ins, {
             output_directory = gen_dir,
+            
+            ignore = {
+                
+                -- app
+                -- base and abstract
+                'ofAppBaseWindow',
+                'ofBaseApp',
+                
+                -- communication
+                'ofSerial',
+                'ofSerialDeviceInfo',
+            
+                -- typedefs
+                'ofFloatColor',
+                'ofShortImage',
+                'ofFloatImage',
+                
+                -- graphics
+                --base and abstract
+                'ofBaseRenderer',
+                'ofAbstractHasPixels',
+                'ofAbstractImage',
+                'charProps',
+                -- typedefs
+                'ofShortPixels',
+                'ofFloatPixels',
+                
+                -- sound
+                --base and abstract
+                'ofBaseSoundInput',
+                'ofBaseSoundOutput',
+                
+                --types
+                -- base and abstract
+                'ofBaseDraws',
+                'ofBaseHasTexture',
+                'ofBaseUpdates',
+
+                -- utils
+                -- base and abstract
+                'ofBaseLoggerChannel',
+                'ofFileDialogResult',
+                
+                -- video
+                -- base and abstract
+                'ofBaseVideo',
+                'ofBaseVideoDraws',
+                'ofBaseVideoGrabber',
+                'ofBaseVideoPlayer',
+            },
+            
+            -- Removes this part in generated headers
+            header_base = {
+                of_base,
+                base..'/../../src/app/'
+            },
             -- Execute all lua_open in a single go
             -- with luaopen_of (creates of.cpp).
             single_lib = 'of',
