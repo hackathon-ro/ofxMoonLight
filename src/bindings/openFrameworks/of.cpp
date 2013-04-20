@@ -13,6 +13,7 @@
 #include "types/ofColor.h"
 #include "3d/ofEasyCam.h"
 #include "events/ofEvents.h"
+#include "gl/ofGLES2Renderer.h"
 #include "gl/ofFbo.h"
 #include "utils/ofFileUtils.h"
 #include "gl/ofLight.h"
