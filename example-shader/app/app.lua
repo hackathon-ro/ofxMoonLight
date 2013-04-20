@@ -9,6 +9,8 @@ app = ofLuaApp()
 function app:setup()
     ofSetWindowTitle('Balls')
 
+    ofBackground(34, 34, 34);
+
     windowWidth = ofGetWindowWidth()
     windowHeight = ofGetWindowHeight()
 

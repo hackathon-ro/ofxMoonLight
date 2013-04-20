@@ -115,6 +115,7 @@ local ins = dub.Inspector {
         of_base .. '/gl/ofTexture.h',
         of_base .. '/gl/ofVbo.h',
         of_base .. '/gl/ofVboMesh.h',
+        of_base .. '/gl/ofGLES2Renderer.h',
         
         of_base .. '/graphics/ofBitmapFont.h',
         of_base .. '/graphics/ofGraphics.h',
