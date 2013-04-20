@@ -9,9 +9,6 @@
  --]]------------------------------------------------------
 require 'lubyk'
 
--- 5 = show all warnings
-dub.warn_level = 4
-
 local base = lk.scriptDir()
 local of_base = lk.scriptDir() .. '/api/openFrameworks'
 
