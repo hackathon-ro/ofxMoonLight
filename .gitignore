@@ -1,4 +1,5 @@
 *.app
 liblua.a
 Breakpoints*
-launcher
+tools/binder/bindings
+launcher/obj/

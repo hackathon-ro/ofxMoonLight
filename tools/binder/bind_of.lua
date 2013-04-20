@@ -157,7 +157,7 @@ local ins = dub.Inspector {
         of_base .. '/video/ofVideoGrabber.h',
         of_base .. '/video/ofVideoPlayer.h',
         
-        base..'/../../src/app/',
+        base..'/../../src/',
     },
     
     html = false,

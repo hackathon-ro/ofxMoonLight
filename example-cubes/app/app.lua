@@ -64,7 +64,7 @@ function app:draw()
 		ofPopMatrix()
 	end
 	
-	cam:end()
+	cam:camEnd()
 
 end
 
