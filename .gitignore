@@ -3,3 +3,4 @@ liblua.a
 Breakpoints*
 tools/binder/bindings
 launcher/obj/
+UserInterfaceState*
