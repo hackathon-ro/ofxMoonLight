@@ -1202,7 +1202,7 @@ static const struct luaL_Reg ofShader_member_methods[] = {
   { "unload"       , ofShader_unload      },
   { "isLoaded"     , ofShader_isLoaded    },
   { "begin"        , ofShader_begin       },
-  { "end"          , ofShader_end         },
+  { "finish"          , ofShader_end         },
   { "setUniformTexture", ofShader_setUniformTexture },
   { "setUniform1i" , ofShader_setUniform1i },
   { "setUniform2i" , ofShader_setUniform2i },
