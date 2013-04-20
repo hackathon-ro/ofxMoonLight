@@ -144,6 +144,10 @@
 		3AB571F51722D8F90020BA63 /* example-app */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-app"; path = "../example-app"; sourceTree = "<group>"; };
 		3AB571F61722D9A20020BA63 /* tools */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tools; path = ../tools; sourceTree = "<group>"; };
 		6760B1251722DF9700F0D453 /* example-cubes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-cubes"; path = "../example-cubes"; sourceTree = "<group>"; };
+		6760B1261722E0C400F0D453 /* example-graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-graphics"; path = "../example-graphics"; sourceTree = "<group>"; };
+		6760B1271722F05200F0D453 /* example-lines */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-lines"; path = "../example-lines"; sourceTree = "<group>"; };
+		6760B1281722FB5400F0D453 /* example-pufos */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-pufos"; path = "../example-pufos"; sourceTree = "<group>"; };
+		6760B12917231A2A00F0D453 /* example-particles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-particles"; path = "../example-particles"; sourceTree = "<group>"; };
 		B34CF6151719D9AA00017A01 /* of.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = of.cpp; sourceTree = "<group>"; };
 		B34CF6171719D9AA00017A01 /* ofAudioEventArgs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofAudioEventArgs.cpp; sourceTree = "<group>"; };
 		B34CF6181719D9AA00017A01 /* ofBaseGLRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofBaseGLRenderer.cpp; sourceTree = "<group>"; };
@@ -459,6 +463,13 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+
+				6760B12917231A2A00F0D453 /* example-particles */,
+				6760B1281722FB5400F0D453 /* example-pufos */,
+				6760B1271722F05200F0D453 /* example-lines */,
+				6760B1261722E0C400F0D453 /* example-graphics */,
+				6760B1251722DF9700F0D453 /* example-cubes */,
+
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				B360F0241719947D00F6EB0F /* src */,
