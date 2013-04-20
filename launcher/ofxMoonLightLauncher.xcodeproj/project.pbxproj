@@ -76,6 +76,7 @@
 		B385EFBA171C94E7000B3888 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B385EF3E171C94B8000B3888 /* liblua.a */; };
 		B385EFC5171C9A96000B3888 /* ofLuaApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B385EFC1171C9A96000B3888 /* ofLuaApp.cpp */; };
 		B385EFC6171C9A96000B3888 /* ofxMoonLightLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B385EFC3171C9A96000B3888 /* ofxMoonLightLogger.cpp */; };
+		B3DE17D61722F1E90072EAC4 /* ofPixels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3DE17D51722F1E90072EAC4 /* ofPixels.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -143,7 +144,6 @@
 		3AB571F51722D8F90020BA63 /* example-app */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-app"; path = "../example-app"; sourceTree = "<group>"; };
 		3AB571F61722D9A20020BA63 /* tools */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tools; path = ../tools; sourceTree = "<group>"; };
 		6760B1251722DF9700F0D453 /* example-cubes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-cubes"; path = "../example-cubes"; sourceTree = "<group>"; };
-		6760B1261722E0C400F0D453 /* example-graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-graphics"; path = "../example-graphics"; sourceTree = "<group>"; };
 		B34CF6151719D9AA00017A01 /* of.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = of.cpp; sourceTree = "<group>"; };
 		B34CF6171719D9AA00017A01 /* ofAudioEventArgs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofAudioEventArgs.cpp; sourceTree = "<group>"; };
 		B34CF6181719D9AA00017A01 /* ofBaseGLRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofBaseGLRenderer.cpp; sourceTree = "<group>"; };
@@ -215,6 +215,8 @@
 		B385EFC2171C9A96000B3888 /* ofLuaApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofLuaApp.h; sourceTree = "<group>"; };
 		B385EFC3171C9A96000B3888 /* ofxMoonLightLogger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMoonLightLogger.cpp; sourceTree = "<group>"; };
 		B385EFC4171C9A96000B3888 /* ofxMoonLightLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMoonLightLogger.h; sourceTree = "<group>"; };
+		B3DE17D41722E6E00072EAC4 /* example-graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-graphics"; path = "../example-graphics"; sourceTree = "<group>"; };
+		B3DE17D51722F1E90072EAC4 /* ofPixels.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofPixels.cpp; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -309,6 +311,7 @@
 				B34CF6351719D9AA00017A01 /* ofMatrix4x4.cpp */,
 				B34CF6361719D9AA00017A01 /* ofMesh.cpp */,
 				B34CF6371719D9AA00017A01 /* ofMessage.cpp */,
+				B3DE17D51722F1E90072EAC4 /* ofPixels.cpp */,
 				B34CF6381719D9AA00017A01 /* ofMouseEventArgs.cpp */,
 				B34CF6391719D9AA00017A01 /* ofNode.cpp */,
 				B34CF63A1719D9AA00017A01 /* ofPath.cpp */,
@@ -464,6 +467,7 @@
 				E45BE5980E8CC70C009D7055 /* frameworks */,
 				E4B69B5B0A3A1756003C02F2 /* ofxMoonLightLauncherDebug.app */,
 				3AB571F61722D9A20020BA63 /* tools */,
+				B3DE17D41722E6E00072EAC4 /* example-graphics */,
 				3AB571F51722D8F90020BA63 /* example-app */,
 				6760B1251722DF9700F0D453 /* example-cubes */,
 			);
@@ -642,6 +646,7 @@
 				B34CF68F1719D9AA00017A01 /* ofVideoPlayer.cpp in Sources */,
 				B385EFC5171C9A96000B3888 /* ofLuaApp.cpp in Sources */,
 				B385EFC6171C9A96000B3888 /* ofxMoonLightLogger.cpp in Sources */,
+				B3DE17D61722F1E90072EAC4 /* ofPixels.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

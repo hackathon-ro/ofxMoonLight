@@ -13,7 +13,6 @@ enum ofInterpolationMethod {
 	OF_INTERPOLATE_BICUBIC			=3
 };
 
-template <typename PixelType>
 class ofPixels {
 
 	friend class ofPixelUtils;
@@ -26,15 +25,12 @@ public:
 	ofPixels& operator=(const ofPixels & mom);
 
 	void allocate(int w, int h, int channels);
-	void allocate(int w, int h, ofPixelFormat type);
-	void allocate(int w, int h, ofImageType type);
 
-	void set(PixelType val);
-	void set(int channel,PixelType val);
-	void setFromPixels(const PixelType * newPixels,int w, int h, int channels);
-	void setFromPixels(const PixelType * newPixels,int w, int h, ofImageType type);
-	void setFromExternalPixels(PixelType * newPixels,int w, int h, int channels);
-	void setFromAlignedPixels(const PixelType * newPixels, int width, int height, int channels, int stride);
+	void set(unsigned char val);
+	void set(int channel,unsigned char val);
+	void setFromPixels(const unsigned char * newPixels,int w, int h, int channels);
+	void setFromExternalPixels(unsigned char * newPixels,int w, int h, int channels);
+	void setFromAlignedPixels(const unsigned char * newPixels, int width, int height, int channels, int stride);
 	void swap(ofPixels & pix);
 
 	//From ofPixelsUtils
@@ -57,15 +53,15 @@ public:
 
 	void clear();
 	
-	PixelType * getPixels();
-	const PixelType * getPixels() const;
+	unsigned char * getPixels();
+	const unsigned char * getPixels() const;
 
 	int getPixelIndex(int x, int y) const;
 	ofColor getColor(int x, int y) const;
 	void setColor(int x, int y, ofColor color);
 
-	const PixelType& operator[](int pos) const;
-	PixelType& operator[](int pos);
+	const unsigned char& operator[](int pos) const;
+	unsigned char& operator[](int pos);
 
 	bool isAllocated() const;
 

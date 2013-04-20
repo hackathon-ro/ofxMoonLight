@@ -96,6 +96,7 @@ int luaopen_ofMatrix4x4(lua_State *L);
 int luaopen_ofMesh(lua_State *L);
 int luaopen_ofNode(lua_State *L);
 int luaopen_ofPath(lua_State *L);
+int luaopen_ofPixels(lua_State *L);
 int luaopen_ofSubPath(lua_State *L);
 int luaopen_ofPolyline(lua_State *L);
 int luaopen_ofQuaternion(lua_State *L);
@@ -7041,6 +7042,7 @@ extern "C" int luaopen_of(lua_State *L) {
   luaopen_ofMesh(L);
   luaopen_ofNode(L);
   luaopen_ofPath(L);
+  luaopen_ofPixels(L);
   luaopen_ofSubPath(L);
   luaopen_ofPolyline(L);
   luaopen_ofQuaternion(L);
