@@ -3,13 +3,10 @@ require 'ParticleSystem'
 
 app = ofLuaApp()
 
-ps = {}
-imgs = {}
-
 
 function app:setup()
 
-    ofSetSmoothLighting()
+    --ofSetSmoothLighting()
 
     width = ofGetWindowWidth()
     height = ofGetWindowHeight()
@@ -17,16 +14,31 @@ function app:setup()
     mouseX = 0
     mouseY = 0
 
+    ofBackground(0);
+
+    ofEnableBlendMode(OF_BLENDMODE_ADD);
+    
     imgs = {};
 
-
-    imgs[1] = ofImage():loadImage("corona.png");
-    imgs[2] = ofImage():loadImage("emitter.png");
-    imgs[3] = ofImage():loadImage("particle.png");
-    imgs[4] = ofImage():loadImage("texture.png");
-    imgs[5] = ofImage():loadImage("reflection.png");
+    img1 = ofImage();
+    img1:loadImage("corona.png");
+    img2 = ofImage();
+    img2:loadImage("emitter.png");
+    img3 = ofImage();
+    img3:loadImage("particle.png");
+    img4 = ofImage();
+    img4:loadImage("texture.png");
+    img5 = ofImage();
+    img5:loadImage("reflection.png");
+    
+    imgs[1] = img1
+    imgs[2] = img2
+    imgs[3] = img3
+    imgs[4] = img4
+    imgs[5] = img5
 
     ps = ParticleSystem(imgs, ofVec2f(width/2, 50));
+    
 
 end
 
@@ -35,14 +47,10 @@ end
 
 function app:draw()
 
-    ofBackground(255);
-
-    ofEnableBlendMode(OF_BLENDMODE_ADD);
-
     up = ofVec2f(0,-0.2);
     ps:applyForces(up);
     ps:run();
-    for i=0,5 do
+    for i=1,2 do
         ps:addParticle(mouseX,mouseY);
     end
 

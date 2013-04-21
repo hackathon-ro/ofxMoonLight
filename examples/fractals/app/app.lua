@@ -4,7 +4,7 @@ require 'Branch'
 
 app = ofLuaApp()
 
-_maxLevels = 4;
+_maxLevels = 2;
 _strutFactor = 0.2;
 xdirection = 1;
  ydirection = 1;
@@ -14,12 +14,14 @@ xdirection = 1;
 function app:setup()
 
     ofBackground(255);
-    ofSetSmoothLighting()
+    --ofSetSmoothLighting()
 
     ofSetFrameRate(30)
 
     width = ofGetWindowWidth()
     height = ofGetWindowHeight()
+
+    ofEnableAlphaBlending()
 
   _strutNoise = ofRandom(10);
   red1 = ofRandom(255);
@@ -48,16 +50,57 @@ function app:setup()
  
   Rad = ofRandom(100, 600)
  
-  _numSides = ofRandom(3, 10)
+  _numSides = ofRandom(3, 6)
+  
+    -- 8 bits red, 8 bits green, 8 bits blue, from 0 to 255 in 256 steps
+    rgbaFbo = ofFbo() -- with alpha
+    rgbaFbo:allocate(width, height)
+		
+    -- 32 bits red, 32 bits green, 32 bits blue, from 0 to 1 in 'infinite' steps
+    rgbaFboFloat = ofFbo() -- with alpha
+    rgbaFboFloat:allocate(width, height)
+		
+    fadeAmnt = 0
+    
+    rgbaFbo:begin()
+	ofClear(255,255,255, 0)
+    rgbaFbo:finish()
+	
+	rgbaFboFloat:begin()
+	ofClear(255,255,255, 0)
+    rgbaFboFloat:finish()
+
   
 end
 
 function app:update()
 
+    
     pentagon = FractalRoot(ofGetElapsedTimef()*0.05);
+
+
+	
+	-- lets draw some graphics into our two fbos
+    rgbaFbo:begin()
+    self:drawFboTest()
+    rgbaFbo:finish()
+    
+    -- lets draw some graphics into our two fbos
+    rgbaFbo:begin()
+    self:drawFboTest()
+    rgbaFbo:finish()
+
 end
 
-function app:draw()
+function app:drawFboTest()
+
+	-- this is where we fade the fbo
+	-- by drawing a rectangle the size of the fbo with a small alpha value, we can slowly fade the current contents of the fbo.
+	ofFill()
+	ofSetColor(255,255,255, 15)
+	ofRect(0,0,width,height)
+
+   -- ofClear(255,255,255, 5)
 
     _strutNoise = _strutNoise+0.01;
     _strutFactor = ofNoise(_strutNoise)*2;
@@ -70,6 +113,16 @@ function app:draw()
     pentagon:drawShape();
     ofTranslate(xpos2, ypos2);
     pentagon:drawShape();
+    
+    
+    
+end
+
+function app:draw()
+
+    ofSetColor(255,255,255)
+    rgbaFbo:draw(0,0)
+    rgbaFboFloat:draw(410,0)
 
 end
 
@@ -106,9 +159,9 @@ function app:mousePressed(x, y, button)
 
     Rad = ofRandom(100, 600);
 
-    _strutNoise = ofRandom(20);
+    _strutNoise = ofRandom(2);
 
-    _numSides = ofRandom(3, 10);
+    _numSides = ofRandom(3, 6);
 
 end
 

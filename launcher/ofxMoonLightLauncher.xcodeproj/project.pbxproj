@@ -142,10 +142,6 @@
 /* Begin PBXFileReference section */
 		30330A8116C9378F005A50EF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		30330A8316C937B3005A50EF /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
-		3AB571F51722D8F90020BA63 /* example-app */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-app"; path = "../example-app"; sourceTree = "<group>"; };
-		3AB571F61722D9A20020BA63 /* tools */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tools; path = ../tools; sourceTree = "<group>"; };
-		6760B1271722F05200F0D453 /* example-lines */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-lines"; path = "../example-lines"; sourceTree = "<group>"; };
-		6760B1281722FB5400F0D453 /* example-pufos */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-pufos"; path = "../example-pufos"; sourceTree = "<group>"; };
 		B34CF6151719D9AA00017A01 /* of.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = of.cpp; sourceTree = "<group>"; };
 		B34CF6171719D9AA00017A01 /* ofAudioEventArgs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofAudioEventArgs.cpp; sourceTree = "<group>"; };
 		B34CF6181719D9AA00017A01 /* ofBaseGLRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofBaseGLRenderer.cpp; sourceTree = "<group>"; };
@@ -217,10 +213,7 @@
 		B385EFC2171C9A96000B3888 /* ofLuaApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofLuaApp.h; sourceTree = "<group>"; };
 		B385EFC3171C9A96000B3888 /* ofxMoonLightLogger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMoonLightLogger.cpp; sourceTree = "<group>"; };
 		B385EFC4171C9A96000B3888 /* ofxMoonLightLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMoonLightLogger.h; sourceTree = "<group>"; };
-		B3DE17D41722E6E00072EAC4 /* example-graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-graphics"; path = "../example-graphics"; sourceTree = "<group>"; };
 		B3DE17D51722F1E90072EAC4 /* ofPixels.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofPixels.cpp; sourceTree = "<group>"; };
-		B3DE17E1172335440072EAC4 /* example-shader */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-shader"; path = "../example-shader"; sourceTree = "<group>"; };
-		B3DE17E2172335D70072EAC4 /* example-sand */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "example-sand"; path = "../example-sand"; sourceTree = "<group>"; };
 		B3DE17E5172344A40072EAC4 /* ofGLES2Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofGLES2Renderer.cpp; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -472,13 +465,6 @@
 				E45BE5980E8CC70C009D7055 /* frameworks */,
 				E4B69B5B0A3A1756003C02F2 /* ofxMoonLightLauncherDebug.app */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
-				3AB571F61722D9A20020BA63 /* tools */,
-				B3DE17E1172335440072EAC4 /* example-shader */,
-				6760B1281722FB5400F0D453 /* example-pufos */,
-				6760B1271722F05200F0D453 /* example-lines */,
-				B3DE17D41722E6E00072EAC4 /* example-graphics */,
-				3AB571F51722D8F90020BA63 /* example-app */,
-				B3DE17E2172335D70072EAC4 /* example-sand */,
 			);
 			sourceTree = "<group>";
 		};
