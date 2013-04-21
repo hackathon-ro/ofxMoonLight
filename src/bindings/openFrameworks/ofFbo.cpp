@@ -678,7 +678,7 @@ static const struct luaL_Reg ofFbo_member_methods[] = {
   { "getDepthTexture", ofFbo_getDepthTexture },
   { "setUseTexture", ofFbo_setUseTexture  },
   { "begin"        , ofFbo_begin          },
-  { "end"          , ofFbo_end            },
+  { "finish"          , ofFbo_end            },
   { "readToPixels" , ofFbo_readToPixels   },
   { "getWidth"     , ofFbo_getWidth       },
   { "getHeight"    , ofFbo_getHeight      },
