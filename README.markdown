@@ -34,19 +34,19 @@ API-ului si doresc sa dezvolte rapid pe RasberryPi.
 # Instructiuni
 
 ### Instalare
-<code> 
-<code>wget https://github.com/hackathon-ro/ofxMoonLight/raw/master/prebuilt/downloadAndInstall.sh </code>
-<code>chmod +x downloadAndInstall.sh</code>
-<code>./downloadAndInstall.sh</code>
+<br/>
+<code>wget https://github.com/hackathon-ro/ofxMoonLight/raw/master/prebuilt/downloadAndInstall.sh </code><br/>
+<code>chmod +x downloadAndInstall.sh</code><br/>
+<code>./downloadAndInstall.sh</code><br/>
 
 
 ### Configurare
-Adaugati linia urmatoare in ~/.bashrc:
-<code> export PATH=/path/to/MoonLight/:$PATH </code>
+Adaugati linia urmatoare in ~/.bashrc:<br/>
+<code> export PATH=/path/to/MoonLight/:$PATH </code><br/>
 
 ### Rulare
-<code>?>ml new PROJECT_NAME</code>
-<code>?>ml /path/to/project_folder/</code>
+<code>?>ml new PROJECT_NAME</code><br/>
+<code>?>ml /path/to/project_folder/</code><br/>
 
 ### Structura proiectului
 - /project_folder/main.lua (obligatorie) : incarca clasa principala a aplicatiei
