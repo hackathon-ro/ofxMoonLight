@@ -21,6 +21,8 @@ function app:setup()
     width = ofGetWindowWidth()
     height = ofGetWindowHeight()
 
+    ofEnableAlphaBlending()
+
   _strutNoise = ofRandom(10);
   red1 = ofRandom(255);
   green1 = ofRandom(255);
@@ -50,14 +52,55 @@ function app:setup()
  
   _numSides = ofRandom(3, 10)
   
+    -- 8 bits red, 8 bits green, 8 bits blue, from 0 to 255 in 256 steps
+    rgbaFbo = ofFbo() -- with alpha
+    rgbaFbo:allocate(width, height)
+		
+    -- 32 bits red, 32 bits green, 32 bits blue, from 0 to 1 in 'infinite' steps
+    rgbaFboFloat = ofFbo() -- with alpha
+    rgbaFboFloat:allocate(width, height)
+		
+    fadeAmnt = 0
+    
+    rgbaFbo:begin()
+	ofClear(255,255,255, 0)
+    rgbaFbo:finish()
+	
+	rgbaFboFloat:begin()
+	ofClear(255,255,255, 0)
+    rgbaFboFloat:finish()
+
+  
 end
 
 function app:update()
 
+    
     pentagon = FractalRoot(ofGetElapsedTimef()*0.05);
+
+
+	
+	-- lets draw some graphics into our two fbos
+    rgbaFbo:begin()
+    self:drawFboTest()
+    rgbaFbo:finish()
+    
+    -- lets draw some graphics into our two fbos
+    rgbaFbo:begin()
+    self:drawFboTest()
+    rgbaFbo:finish()
+
 end
 
-function app:draw()
+function app:drawFboTest()
+
+	-- this is where we fade the fbo
+	-- by drawing a rectangle the size of the fbo with a small alpha value, we can slowly fade the current contents of the fbo.
+	ofFill()
+	ofSetColor(255,255,255, 15)
+	ofRect(0,0,width,height)
+
+   -- ofClear(255,255,255, 5)
 
     _strutNoise = _strutNoise+0.01;
     _strutFactor = ofNoise(_strutNoise)*2;
@@ -70,6 +113,16 @@ function app:draw()
     pentagon:drawShape();
     ofTranslate(xpos2, ypos2);
     pentagon:drawShape();
+    
+    
+    
+end
+
+function app:draw()
+
+    ofSetColor(255,255,255)
+    rgbaFbo:draw(0,0)
+    rgbaFboFloat:draw(410,0)
 
 end
 
