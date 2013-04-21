@@ -33,7 +33,7 @@ function Particle:render()
     
     self.image:setAnchorPoint(self.image:getWidth()/2, self.image:getHeight()/2);
     self.image:draw(self.loc.x, self.loc.y);
-    self.image:resize(32,32)
+    self.image:resize(64,64)
     
 end
     
