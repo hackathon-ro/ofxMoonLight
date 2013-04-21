@@ -59,7 +59,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Volumes/raspberrypidev/openFrameworks/addons/ofxMoonLight/example-graphics"
+            argument = "/Volumes/raspberrypidev/openFrameworks/addons/ofxMoonLight/examples/particles"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

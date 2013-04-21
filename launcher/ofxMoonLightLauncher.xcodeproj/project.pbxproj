@@ -143,6 +143,8 @@
 		30330A8116C9378F005A50EF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		30330A8316C937B3005A50EF /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		3AB571F61722D9A20020BA63 /* tools */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tools; path = ../tools; sourceTree = "<group>"; };
+		677AA7241723742D00D43D58 /* fractals */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fractals; path = ../examples/fractals; sourceTree = "<group>"; };
+		677AA7251723747D00D43D58 /* particles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = particles; path = ../examples/particles; sourceTree = "<group>"; };
 		B34CF6151719D9AA00017A01 /* of.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = of.cpp; sourceTree = "<group>"; };
 		B34CF6171719D9AA00017A01 /* ofAudioEventArgs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofAudioEventArgs.cpp; sourceTree = "<group>"; };
 		B34CF6181719D9AA00017A01 /* ofBaseGLRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofBaseGLRenderer.cpp; sourceTree = "<group>"; };
@@ -459,6 +461,8 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				677AA7251723747D00D43D58 /* particles */,
+				677AA7241723742D00D43D58 /* fractals */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				B360F0241719947D00F6EB0F /* src */,
 				BB4B014C10F69532006C3DED /* addons */,
