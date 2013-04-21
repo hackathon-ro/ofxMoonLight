@@ -1,5 +1,5 @@
-n = 5000 -- number of cells
-bd = 37 -- base line length
+n = 150 -- number of cells
+bd = 97 -- base line length
 sp = 0.004 -- rotation speed step
 sl = 0.97 -- slow down rate
 
@@ -43,8 +43,8 @@ app = ofLuaApp()
 function app:setup()
     ofSetWindowTitle('New app')
 
-    width = ofGetWindowWidth()
-    height = ofGetWindowHeight()
+    width = ofGetWindowWidth()/3
+    height = ofGetWindowHeight()/3
 
     -- ofEnableSmoothing()
     ofSetFrameRate(30)
@@ -60,8 +60,8 @@ function app:update()
 end
 
 function app:draw()
-
-    ofSetLineWidth(1)
+    ofTranslate(600, 400)
+    ofSetLineWidth(10)
     for i = 1, n do
         ofSetColor(ofColor().fromHsb(math.sin(i) * 128 + 128, 255, 255))
         all[i]:sense()

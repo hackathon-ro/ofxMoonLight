@@ -20,7 +20,7 @@ function app:setup()
     font = ofTrueTypeFont()
     shader = ofShader()
 
-    font:loadFont("type/verdana.ttf", 100, true, false, true, 0.4, 72)
+    font:loadFont("type/verdana.ttf", 100, true, false, true, 0.4, 144)
     shader:load("shaders_gles/noise.vert","shaders_gles/noise.frag")
 
     doShader = true
@@ -49,7 +49,7 @@ function app:draw()
     end
 
     -- finally draw our text
-    font:drawStringAsShapes("openFrameworks", 90, 260)
+    font:drawStringAsShapes("openFrameworks", 90, windowHeight/2 - 72)
 
     if doShader then
         shader:finish()
