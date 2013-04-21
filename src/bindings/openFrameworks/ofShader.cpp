@@ -256,7 +256,7 @@ static int ofShader_setUniformTexture(lua_State *L) {
     } else {
       int type__ = lua_type(L, 3);
       void **ptr3__;
-      if ( (ptr3__ = dub_issdata(L, 3, "ofBaseHasTexture", type__)) ) {
+      if ( (ptr3__ = dub_issdata(L, 3, "ofImage", type__)) ) {
         const char *name = dub_checkstring(L, 2);
         ofBaseHasTexture *img = *((ofBaseHasTexture **)ptr3__);
         int textureLocation = dub_checkint(L, 4);
