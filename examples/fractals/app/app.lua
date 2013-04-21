@@ -4,7 +4,7 @@ require 'Branch'
 
 app = ofLuaApp()
 
-_maxLevels = 4;
+_maxLevels = 2;
 _strutFactor = 0.2;
 xdirection = 1;
  ydirection = 1;
@@ -14,7 +14,7 @@ xdirection = 1;
 function app:setup()
 
     ofBackground(255);
-    ofSetSmoothLighting()
+    --ofSetSmoothLighting()
 
     ofSetFrameRate(30)
 
@@ -50,7 +50,7 @@ function app:setup()
  
   Rad = ofRandom(100, 600)
  
-  _numSides = ofRandom(3, 10)
+  _numSides = ofRandom(3, 6)
   
     -- 8 bits red, 8 bits green, 8 bits blue, from 0 to 255 in 256 steps
     rgbaFbo = ofFbo() -- with alpha
@@ -159,9 +159,9 @@ function app:mousePressed(x, y, button)
 
     Rad = ofRandom(100, 600);
 
-    _strutNoise = ofRandom(20);
+    _strutNoise = ofRandom(2);
 
-    _numSides = ofRandom(3, 10);
+    _numSides = ofRandom(3, 6);
 
 end
 
