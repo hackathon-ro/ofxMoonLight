@@ -53,3 +53,4 @@ Adaugati linia urmatoare in ~/.bashrc:<br/>
 - /project_folder/app/app.lua (obligatorie) : clasa principala a aplicatiei, contine toate functiile necesare implementarii
 - /project_folder/app/class.lua (optionala) : simuleaza o clasa in lua; trebuie pastrata in situatia in care proiectul contine clase
 - restul claselor vor fi create in /project_folder/app/
+- /project_folder/data/ contine asset-uri grafice, audio, video etc.
