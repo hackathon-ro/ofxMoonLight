@@ -21,6 +21,7 @@ function app:draw()
 	for i = 1,boxCount do
 
 		ofPushMatrix();
+        ofTranslate(400, 0)
 		
 		t = (ofGetElapsedTimef() + i * spacing) * movementSpeed;
         
