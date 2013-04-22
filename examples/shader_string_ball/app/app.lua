@@ -1,7 +1,7 @@
 
 app = ofLuaApp()
 
-count = 500;
+count = 2500;
 radius = 20;
 
 function app:setup()
@@ -20,7 +20,7 @@ function app:setup()
     self.rx = 0;
     self.ry = 0;
 
-    radius = height/8;
+    radius = height/4;
 
     lista = {}
     for i = 1,count do
@@ -28,7 +28,7 @@ function app:setup()
     end
 
     shader = ofShader()
-    shader:load("shaders_gles/string")
+    shader:load("shaders/string")
 
     ofBackground(0);
 end

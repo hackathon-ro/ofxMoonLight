@@ -21,7 +21,7 @@ function app:setup()
     shader = ofShader()
 
     font:loadFont("type/verdana.ttf", 100, true, false, true, 0.4, 144)
-    shader:load("shaders_gles/noise.vert","shaders_gles/noise.frag")
+    shader:load("shaders/noise.vert","shaders/noise.frag")
 
     doShader = true
 end

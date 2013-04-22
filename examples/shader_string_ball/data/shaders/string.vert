@@ -56,9 +56,9 @@ void main(){
 
 	vec3 d = vec3(initPos.x, initPos.y, initPos.z) - vec3(0.0, 0.0, 0.0);
 	float len =  sqrt(d.x*d.x + d.y*d.y + d.z*d.z);
-	if(len > 105){
+	if(len > 220 && len < 255){
 		//lets get the distance into 0-1 ranges
-		float pct = len / 105.0; 
+		float pct = len / 255.0; 
 		
 		//this turns our linear 0-1 value into a curved 0-1 value
 		pct *= pct;
@@ -76,28 +76,28 @@ void main(){
 
 	vec4 posProj = gl_ProjectionMatrix * gl_ModelViewMatrix * trans * initPos;
 
-	//lets also figure out the distance between the mouse and the vertex and apply a repelling force away from the mouse
-	vec2 md = vec2(posProj.x, posProj.y) - mouse;
-	len =  sqrt(md.x*md.x + md.y*md.y);
-	if(len < 100.0 && len > 0.0) {
-		
-		//lets get the distance into 0-1 ranges
-		float pct = len / 100.0; 
-		
-		//this turns our linear 0-1 value into a curved 0-1 value
-		pct *= pct;
-
-        pct = 1 - pct;
-
-		//flip it so the closer we are the greater the repulsion
-		
-		//normalize our repulsion vector
-		md /= len;
-		
-		//apply the repulsion to our position
-		posProj.x += md.x * pct * 25.0;
-		posProj.y += md.y * pct * 25.0;
-	}
+////lets also figure out the distance between the mouse and the vertex and apply a repelling force away from the mouse
+//vec2 md = vec2(posProj.x, posProj.y) - mouse;
+//len =  sqrt(md.x*md.x + md.y*md.y);
+//if(len < 100.0 && len > 0.0) {
+//	
+//	//lets get the distance into 0-1 ranges
+//	float pct = len / 100.0; 
+//	
+//	//this turns our linear 0-1 value into a curved 0-1 value
+//	pct *= pct;
+//
+//    pct = 1 - pct;
+//
+//	//flip it so the closer we are the greater the repulsion
+//	
+//	//normalize our repulsion vector
+//	md /= len;
+//	
+//	//apply the repulsion to our position
+//	posProj.x += md.x * pct * 25.0;
+//	posProj.y += md.y * pct * 25.0;
+//}
 
 
 	//modify our position with the smooth noise
