@@ -1,10 +1,10 @@
 
 app = ofLuaApp()
 
-count = 2500;
+count = 10000;
 radius = 20;
 
-function app:setup()
+function ofLuaApp:setup()
 
     width = ofGetWindowWidth()
     height = ofGetWindowHeight()
@@ -33,7 +33,7 @@ function app:setup()
     ofBackground(0);
 end
 
-function app:update()
+function ofLuaApp:update()
     rxp = (mouseX-(self.h_width)) * 0.0005;
     ryp = (mouseY-(self.h_height)) * 0.0005;
 
@@ -41,7 +41,7 @@ function app:update()
     self.ry = (self.ry*0.9) + ryp;
 end
 
-function app:draw()
+function ofLuaApp:draw()
 
     tMat = ofMatrix4x4()
     tMat:setTranslation(self.bCenterX, self.bCenterY, 0)
@@ -61,14 +61,14 @@ function app:draw()
     shader:finish()
 end
 
-function app:mouseDragged(x, y, button)
+function ofLuaApp:mouseDragged(x, y, button)
     self.bCenterX = x
     self.bCenterY = y
     mouseX = x
     mouseY = y
 end
 
-function app:mouseMoved(x, y, button)
+function ofLuaApp:mouseMoved(x, y, button)
     mouseX = x
     mouseY = y
 end

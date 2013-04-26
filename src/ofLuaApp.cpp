@@ -96,3 +96,27 @@ void ofLuaApp::windowResized(int w, int h) {
     
     dub_call(3, 0);
 }
+
+// TODO:
+//void ofLuaApp::audioIn(float * input, int bufferSize, int nChannels)
+//{
+//    if(input == NULL)
+//        return;
+//    
+//    if (!dub_pushcallback("audioIn")) return;
+//    
+//    lua_createtable(dub_L, bufferSize, 0);
+//    ofLog(OF_LOG_NOTICE, "-----------");
+//    for (int i = 0; i < bufferSize; i++)
+//    {
+//        ofLog(OF_LOG_NOTICE, "%f", input[i]);
+//        
+//        lua_pushnumber(dub_L, input[i]);
+//        lua_rawseti (dub_L, -2, i + 1);
+//    }
+//    
+//    lua_pushnumber(dub_L, bufferSize);
+//    lua_pushnumber(dub_L, nChannels);
+//    
+//    dub_call(4, 0);
+//}

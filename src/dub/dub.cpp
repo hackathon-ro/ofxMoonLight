@@ -161,12 +161,13 @@ void Thread::pushobject(lua_State *L, void *ptr, const char *tname, bool gc) {
   }
 
   // <self> <udata> <env>
-  dub_L = L;
+//  dub_L = lua_newthread(L);
+    dub_L = const_cast<lua_State *>(L);
   // <self> <udata> <env> <thread>
 
   // Store the thread in the userdata environment table so it is not 
   // garbage collected too soon.
-  //luaL_ref(L, -2);
+//  luaL_ref(L, -2);
   // <self> <udata> <env>
 
   //--=============================================== prepare error function
