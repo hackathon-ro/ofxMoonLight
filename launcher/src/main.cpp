@@ -1,9 +1,7 @@
-#include "ofxMoonLightLogger.h"
+#include "ofxMoonLight.h"
 #include "ofUtils.h"
 
-ofxMoonLight lua;
-vector<string> scripts;
-int currentScript;
+ofxMoonLight * lua;
 
 int createNewApp(string path) {
     string newPath = path;
@@ -54,20 +52,12 @@ int main(int argc, char* argv[]) {
         } else {
             script = argv[1];
         }
-
-        cout << "Script: " << argc << "\n\n";
-
-        // scripts to run
-        scripts.push_back(script);
-        currentScript = 0;
         
-        // listen to error events
-        lua.addListener(new ofxMoonLightLogger());
-        lua.init();
+        lua = new ofxMoonLight();
+        
+        lua->init();
         
         // run a script
-        lua.doScript(scripts[currentScript]);
+        lua->doScript(script);
     }
-
-
 }
