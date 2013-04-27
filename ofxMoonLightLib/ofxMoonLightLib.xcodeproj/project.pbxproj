@@ -431,9 +431,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B38057F7172B202300DF85F2 /* of */ = {
+		B38057F7172B202300DF85F2 /* of.so */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B38057F9172B202300DF85F2 /* Build configuration list for PBXNativeTarget "of" */;
+			buildConfigurationList = B38057F9172B202300DF85F2 /* Build configuration list for PBXNativeTarget "of.so" */;
 			buildPhases = (
 				B38057F4172B202300DF85F2 /* Sources */,
 				B38057F5172B202300DF85F2 /* Frameworks */,
@@ -445,7 +445,7 @@
 			dependencies = (
 				B380583F172B206400DF85F2 /* PBXTargetDependency */,
 			);
-			name = of;
+			name = of.so;
 			productName = of;
 			productReference = B38057F8172B202300DF85F2 /* of.so */;
 			productType = "com.apple.product-type.library.dynamic";
@@ -479,7 +479,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				B38057F7172B202300DF85F2 /* of */,
+				B38057F7172B202300DF85F2 /* of.so */,
 			);
 		};
 /* End PBXProject section */
@@ -506,7 +506,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -f ../../../libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/libfmodex.dylib\"; mkdir -p \"$TARGET_BUILD_DIR/Frameworks/\"; cp -r ../../../libs/glut/lib/osx/ \"$TARGET_BUILD_DIR/Frameworks/\";install_name_tool -change @executable_path/../Frameworks/GLUT.framework/Versions/A/GLUT @loader_path/Frameworks/GLUT.framework/Versions/A/GLUT \"$TARGET_BUILD_DIR/$EXECUTABLE_NAME\" ; install_name_tool -change @executable_path/../libfmodex.dylib @loader_path/libfmodex.dylib \"$TARGET_BUILD_DIR/$EXECUTABLE_NAME\"";
+			shellScript = "mkdir -p \"$TARGET_BUILD_DIR/Library/Frameworks/\" ;\n\ncp -f ../../../libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/Library/libfmodex.dylib\" ;\n\ncp -r ../../../libs/glut/lib/osx/ \"$TARGET_BUILD_DIR/Library/Frameworks/\" ;\n\ninstall_name_tool -change @executable_path/../Frameworks/GLUT.framework/Versions/A/GLUT @loader_path/Library/Frameworks/GLUT.framework/Versions/A/GLUT \"$TARGET_BUILD_DIR/$EXECUTABLE_NAME\" ;\n\ninstall_name_tool -change ./libfmodex.dylib @loader_path/Library/libfmodex.dylib \"$TARGET_BUILD_DIR/$EXECUTABLE_NAME\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -606,7 +606,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_EXTENSION = "";
+				EXECUTABLE_SUFFIX = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../libs/glut/lib/osx\"",
@@ -645,7 +646,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_EXTENSION = "";
+				EXECUTABLE_SUFFIX = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../libs/glut/lib/osx\"",
@@ -726,7 +728,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B38057F9172B202300DF85F2 /* Build configuration list for PBXNativeTarget "of" */ = {
+		B38057F9172B202300DF85F2 /* Build configuration list for PBXNativeTarget "of.so" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B38057FA172B202300DF85F2 /* Debug */,

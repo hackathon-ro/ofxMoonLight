@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B38057F7172B202300DF85F2"
                BuildableName = "of.so"
-               BlueprintName = "of"
+               BlueprintName = "of.so"
                ReferencedContainer = "container:ofxMoonLightLib.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

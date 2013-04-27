@@ -4,10 +4,10 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>of.xcscheme</key>
+		<key>of.so.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -33,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>B38057F7172B202300DF85F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3805871172C0AD700DF85F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
