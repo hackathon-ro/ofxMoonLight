@@ -11,7 +11,7 @@ OF_PATH = ../../..
 // path to the addons dir
 ADDONS_PATH = $(OF_PATH)/addons
 
-OFX_MOONLIGHT_HEADERS = "$(ADDONS_PATH)/ofxMoonLight/src/" "$(ADDONS_PATH)/ofxMoonLight/libs/lua/etc" "$(ADDONS_PATH)/ofxMoonLight/libs/lua/src"
+OFX_MOONLIGHT_HEADERS = "$(ADDONS_PATH)/ofxMoonLight/src/"
 
 // all addons
 OF_ADDON_HEADERS = $(OFX_MOONLIGHT_HEADERS)

@@ -1,7 +1,7 @@
 /*
  * Based on https://github.com/danomatika/ofxLua
  */
-#include "ofxMoonLight.h"
+#include "ML.h"
 #include "ofUtils.h"
 
 int setLuaPath( lua_State* L, const char* path )
@@ -31,25 +31,25 @@ int setLuaPath( lua_State* L, const char* path )
 }
 
 // local pointer for static functions
-ofxMoonLight* luaPtr;
+ML* luaPtr;
 
 //------------------------------------------------------------------------------
-ofxMoonLight::ofxMoonLight() {
+ML::ML() {
 	L = NULL;
 	bAbortOnError = false;
 	luaPtr = this;
 }
 
 //------------------------------------------------------------------------------
-ofxMoonLight::~ofxMoonLight() {
+ML::~ML() {
 }
 
 //------------------------------------------------------------------------------
-bool ofxMoonLight::init(bool abortOnError, bool openLibs) {
+bool ML::init(bool abortOnError, bool openLibs) {
 	
 	L = luaL_newstate();
 	if(L == NULL) {
-		ofLogError("ofxMoonLight") << "Error initializing lua";
+		ofLogError("ML") << "Error initializing lua";
 		return false;
 	}
 	
@@ -63,24 +63,24 @@ bool ofxMoonLight::init(bool abortOnError, bool openLibs) {
 	lua_atpanic(L, &atPanic);
 	
 	bAbortOnError = abortOnError;
-	ofLogVerbose("ofxMoonLight") << "Initialized state";
+	ofLogVerbose("ML") << "Initialized state";
 	
 	return true;
 }
 
-bool ofxMoonLight::isValid() {
+bool ML::isValid() {
 	return L != NULL ? true : false;
 }
 
 //------------------------------------------------------------------------------
-bool ofxMoonLight::doString(const string& text) {
+bool ML::doString(const string& text) {
 	
 	if(L == NULL) {
-		ofLogError("ofxMoonLight") << "Cannot do string, lua state not inited!";
+		ofLogError("ML") << "Cannot do string, lua state not inited!";
 		return false;
 	}
 
-	ofLogVerbose("ofxMoonLight") << "Doing string: \"" << text.substr(0,40) << "\"";
+	ofLogVerbose("ML") << "Doing string: \"" << text.substr(0,40) << "\"";
 	
 	// load the string
 	int ret = luaL_loadstring(L, text.c_str());
@@ -118,10 +118,10 @@ bool ofxMoonLight::doString(const string& text) {
 }
 
 //------------------------------------------------------------------------------
-bool ofxMoonLight::doScript(const string& script) {
+bool ML::doScript(const string& script) {
 
 	if(L == NULL) {
-		ofLogError("ofxMoonLight") << "Cannot do script, lua state not inited!";
+		ofLogError("ML") << "Cannot do script, lua state not inited!";
 		return false;
 	}
 
@@ -143,7 +143,7 @@ bool ofxMoonLight::doScript(const string& script) {
 		folder.erase(folder.end()-1);
 	}
 	
-	ofLogVerbose("ofxMoonLight") << "Doing script: \"" << file << "\" path: \"" << folder << "\"";
+	ofLogVerbose("ML") << "Doing script: \"" << file << "\" path: \"" << folder << "\"";
 
     setLuaPath(L, folder.c_str());
     std::string data_path = folder.append("/data/");
@@ -185,17 +185,17 @@ bool ofxMoonLight::doScript(const string& script) {
 }
 
 //------------------------------------------------------------------------------		
-void ofxMoonLight::addListener(ofxMoonLightListener* listener) {
-	ofAddListener(errorEvent, listener, &ofxMoonLightListener::errorReceived);
+void ML::addListener(MLListener* listener) {
+	ofAddListener(errorEvent, listener, &MLListener::errorReceived);
 }
 		
 //------------------------------------------------------------------------------		
-void ofxMoonLight::removeListener(ofxMoonLightListener* listener) {
-	ofRemoveListener(errorEvent, listener, &ofxMoonLightListener::errorReceived);
+void ML::removeListener(MLListener* listener) {
+	ofRemoveListener(errorEvent, listener, &MLListener::errorReceived);
 }
 		
 //------------------------------------------------------------------------------
-void ofxMoonLight::errorOccurred(string& msg) {
+void ML::errorOccurred(string& msg) {
 	
 	errorMessage = msg;
 	
@@ -203,17 +203,17 @@ void ofxMoonLight::errorOccurred(string& msg) {
 	ofNotifyEvent(errorEvent, msg, this);
 	
 	// print
-	ofLogError("ofxMoonLight") << msg;
+	ofLogError("ML") << msg;
 	
 	// close the state?
 	if(bAbortOnError) {
-		ofLogError("ofxMoonLight") << "Closing state";
+		ofLogError("ML") << "Closing state";
 	}
 }
 
 //------------------------------------------------------------------------------
-int ofxMoonLight::atPanic(lua_State *L) {
-	ofLogError("ofxMoonLight") << "Lua panic ocurred! : " << lua_tostring(L, -1);
-	ofLogError("ofxMoonLight") << "Closing state";
+int ML::atPanic(lua_State *L) {
+	ofLogError("ML") << "Lua panic ocurred! : " << lua_tostring(L, -1);
+	ofLogError("ML") << "Closing state";
 	return 0;
 }

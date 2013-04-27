@@ -22,7 +22,7 @@ extern "C" {
 /// a baseclass to receieve lua error messages,
 /// useful for displaying an error message on the screen, etc
 ///
-class ofxMoonLightListener {
+class MLListener {
 
 	public :
 	
@@ -35,12 +35,12 @@ class ofxMoonLightListener {
 ///	references:
 ///		- lua api http://pgl.yoyo.org/luai/i/_
 ///
-class ofxMoonLight {
+class ML {
 	
 	public :
 
-		ofxMoonLight();
-		virtual ~ofxMoonLight();
+		ML();
+		virtual ~ML();
         
 		/// init the lua state
 		///
@@ -73,10 +73,10 @@ class ofxMoonLight {
 	/// \section Listeners
 		
 		/// add a listener, ignores any duplicates
-		void addListener(ofxMoonLightListener* listener);
+		void addListener(MLListener* listener);
 		
 		/// remove a listener
-		void removeListener(ofxMoonLightListener* listener);
+		void removeListener(MLListener* listener);
 		
 	/// \section Util
 		

@@ -1,7 +1,7 @@
-#include "ofxMoonLight.h"
+#include "ML.h"
 #include "ofUtils.h"
 
-ofxMoonLight * lua;
+ML * lua;
 
 int createNewApp(string path) {
     string newPath = path;
@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
             script = argv[1];
         }
         
-        lua = new ofxMoonLight();
+        lua = new ML();
         
         lua->init();
         

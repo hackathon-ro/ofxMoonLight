@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
                BuildableName = "ofxMoonLightLauncher.app"
-               BlueprintName = "ofxMoonLightLauncher"
-               ReferencedContainer = "container:ofxMoonLightLauncher.xcodeproj">
+               BlueprintName = "ml"
+               ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
             BuildableName = "ofxMoonLightLauncher.app"
-            BlueprintName = "ofxMoonLightLauncher"
-            ReferencedContainer = "container:ofxMoonLightLauncher.xcodeproj">
+            BlueprintName = "ml"
+            ReferencedContainer = "container:ml.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
             BuildableName = "ofxMoonLightLauncher.app"
-            BlueprintName = "ofxMoonLightLauncher"
-            ReferencedContainer = "container:ofxMoonLightLauncher.xcodeproj">
+            BlueprintName = "ml"
+            ReferencedContainer = "container:ml.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -77,8 +77,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
             BuildableName = "ofxMoonLightLauncher.app"
-            BlueprintName = "ofxMoonLightLauncher"
-            ReferencedContainer = "container:ofxMoonLightLauncher.xcodeproj">
+            BlueprintName = "ml"
+            ReferencedContainer = "container:ml.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
