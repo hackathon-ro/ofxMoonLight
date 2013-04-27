@@ -418,14 +418,6 @@
 			path = openFrameworks;
 			sourceTree = "<group>";
 		};
-		B360F027171994A600F6EB0F /* ofxMoonLight */ = {
-			isa = PBXGroup;
-			children = (
-				B360F028171994B500F6EB0F /* src */,
-			);
-			name = ofxMoonLight;
-			sourceTree = "<group>";
-		};
 		B360F028171994B500F6EB0F /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,14 +437,6 @@
 				B360F070171994B500F6EB0F /* dub.h */,
 			);
 			path = dub;
-			sourceTree = "<group>";
-		};
-		BB4B014C10F69532006C3DED /* addons */ = {
-			isa = PBXGroup;
-			children = (
-				B360F027171994A600F6EB0F /* ofxMoonLight */,
-			);
-			name = addons;
 			sourceTree = "<group>";
 		};
 		BBAB23C913894ECA00AA2426 /* system frameworks */ = {
@@ -506,7 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
-				BB4B014C10F69532006C3DED /* addons */,
+				B360F028171994B500F6EB0F /* src */,
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
 				B38057F8172B202300DF85F2 /* of.so */,
