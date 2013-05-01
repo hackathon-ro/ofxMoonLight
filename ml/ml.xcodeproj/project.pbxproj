@@ -13,7 +13,7 @@
 		B360F0C51719971C00F6EB0F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B360F0C41719971C00F6EB0F /* Accelerate.framework */; };
 		B380576B172B1D9600DF85F2 /* ML.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3805769172B1D9600DF85F2 /* ML.cpp */; };
 		B38058EB172C106E00DF85F2 /* libof.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B38058DF172C101C00DF85F2 /* libof.a */; };
-		B3805B43172C19BB00DF85F2 /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3805B3F172C199100DF85F2 /* libluajit.a */; };
+		B3F1782B172EBEF0003AF328 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F1782A172EBEE3003AF328 /* liblua.a */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
@@ -52,19 +52,19 @@
 			remoteGlobalIDString = B3805879172C0D7F00DF85F2;
 			remoteInfo = of.a;
 		};
-		B3805B3E172C199100DF85F2 /* PBXContainerItemProxy */ = {
+		B3F17829172EBEE3003AF328 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B3805B3A172C199100DF85F2 /* luajit.xcodeproj */;
+			containerPortal = B3F17825172EBEE3003AF328 /* lua.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 302C279C142B0F8F0048A778;
-			remoteInfo = luajit;
+			remoteInfo = lua;
 		};
-		B3805B41172C19B400DF85F2 /* PBXContainerItemProxy */ = {
+		B3F1782C172EBEF3003AF328 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B3805B3A172C199100DF85F2 /* luajit.xcodeproj */;
+			containerPortal = B3F17825172EBEE3003AF328 /* lua.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 302C279B142B0F8F0048A778;
-			remoteInfo = luajit;
+			remoteInfo = lua;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -89,8 +89,8 @@
 		B3805769172B1D9600DF85F2 /* ML.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ML.cpp; sourceTree = "<group>"; };
 		B380576A172B1D9600DF85F2 /* ML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ML.h; sourceTree = "<group>"; };
 		B38058D6172C101B00DF85F2 /* ofxMoonLightLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ofxMoonLightLib.xcodeproj; path = ../ofxMoonLightLib/ofxMoonLightLib.xcodeproj; sourceTree = "<group>"; };
-		B3805B3A172C199100DF85F2 /* luajit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = luajit.xcodeproj; path = ../libs/luajit.xcodeproj; sourceTree = "<group>"; };
 		B3AC84761728385700F46CF4 /* examples */ = {isa = PBXFileReference; lastKnownFileType = folder; name = examples; path = ../examples; sourceTree = "<group>"; };
+		B3F17825172EBEE3003AF328 /* lua.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = lua.xcodeproj; path = ../libs/lua.xcodeproj; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
 		E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
@@ -114,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3805B43172C19BB00DF85F2 /* libluajit.a in Frameworks */,
+				B3F1782B172EBEF0003AF328 /* liblua.a in Frameworks */,
 				B38058EB172C106E00DF85F2 /* libof.a in Frameworks */,
 				B360F0C51719971C00F6EB0F /* Accelerate.framework in Frameworks */,
 				E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */,
@@ -157,10 +157,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B3805B3B172C199100DF85F2 /* Products */ = {
+		B3F17826172EBEE3003AF328 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B3805B3F172C199100DF85F2 /* libluajit.a */,
+				B3F1782A172EBEE3003AF328 /* liblua.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,7 +209,7 @@
 			children = (
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				B360F0241719947D00F6EB0F /* src */,
-				B3805B3A172C199100DF85F2 /* luajit.xcodeproj */,
+				B3F17825172EBEE3003AF328 /* lua.xcodeproj */,
 				B38058D6172C101B00DF85F2 /* ofxMoonLightLib.xcodeproj */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
 				E4B69B5B0A3A1756003C02F2 /* mlDebug.app */,
@@ -233,7 +233,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B3805B42172C19B400DF85F2 /* PBXTargetDependency */,
+				B3F1782D172EBEF3003AF328 /* PBXTargetDependency */,
 				B38058E9172C105900DF85F2 /* PBXTargetDependency */,
 			);
 			name = ml;
@@ -264,8 +264,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B3805B3B172C199100DF85F2 /* Products */;
-					ProjectRef = B3805B3A172C199100DF85F2 /* luajit.xcodeproj */;
+					ProductGroup = B3F17826172EBEE3003AF328 /* Products */;
+					ProjectRef = B3F17825172EBEE3003AF328 /* lua.xcodeproj */;
 				},
 				{
 					ProductGroup = B38058D7172C101B00DF85F2 /* Products */;
@@ -294,11 +294,11 @@
 			remoteRef = B38058DE172C101C00DF85F2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B3805B3F172C199100DF85F2 /* libluajit.a */ = {
+		B3F1782A172EBEE3003AF328 /* liblua.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libluajit.a;
-			remoteRef = B3805B3E172C199100DF85F2 /* PBXContainerItemProxy */;
+			path = liblua.a;
+			remoteRef = B3F17829172EBEE3003AF328 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -337,10 +337,10 @@
 			name = of.a;
 			targetProxy = B38058E8172C105900DF85F2 /* PBXContainerItemProxy */;
 		};
-		B3805B42172C19B400DF85F2 /* PBXTargetDependency */ = {
+		B3F1782D172EBEF3003AF328 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = luajit;
-			targetProxy = B3805B41172C19B400DF85F2 /* PBXContainerItemProxy */;
+			name = lua;
+			targetProxy = B3F1782C172EBEF3003AF328 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

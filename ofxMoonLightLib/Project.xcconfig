@@ -15,7 +15,9 @@ OFX_MOONLIGHT_HEADERS = "$(ADDONS_PATH)/ofxMoonLight/src/" "$(ADDONS_PATH)/ofxMo
 
 // all addons
 OF_ADDON_HEADERS = $(OFX_MOONLIGHT_HEADERS)
-OF_ADDON_LIBS = -lluajit-5.1
+
+// this is for the dynamic library
+OF_ADDON_LIBS = -llua
 
 ///////////////////////////////////////////
 // MAIN
